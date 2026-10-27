@@ -1,12 +1,13 @@
 Summary:	Null Theme for Sphinx
 Name:		python3-sphinx_null_theme
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/sphinx-null-theme/
 Source0:	https://files.pythonhosted.org/packages/source/s/sphinx-null-theme/sphinx_null_theme-%{version}.tar.gz
 # Source0-md5:	f401a030382714abc641c2970fbd09ba
+Patch0:		beautifulsoup4.patch
 URL:		https://pypi.org/project/sphinx-null-theme/
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
@@ -23,6 +24,7 @@ to be used as parent theme by other ReadCraft themes.
 
 %prep
 %setup -q -n sphinx_null_theme-%{version}
+%patch -P0 -p1
 
 %build
 %py3_build_pyproject
