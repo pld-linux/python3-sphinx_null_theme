@@ -1,4 +1,5 @@
 Summary:	Null Theme for Sphinx
+Summary(pl.UTF-8):	Motyw Null dla Sphinksa
 Name:		python3-sphinx_null_theme
 Version:	1.0.0
 Release:	2
@@ -10,17 +11,23 @@ Source0:	https://files.pythonhosted.org/packages/source/s/sphinx-null-theme/sphi
 Patch0:		beautifulsoup4.patch
 URL:		https://pypi.org/project/sphinx-null-theme/
 BuildRequires:	python3-build
+BuildRequires:	python3-flit_core >= 3.2
+BuildRequires:	python3-flit_core < 4
 BuildRequires:	python3-installer
-BuildRequires:	python3-modules >= 1:3.6
+BuildRequires:	python3-modules >= 1:3.11
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.714
-Requires:	python3-modules >= 1:3.6
+BuildRequires:	rpmbuild(macros) >= 2.044
+Requires:	python3-modules >= 1:3.11
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A weird Sphinx theme with no appereance but functionaly only. Intented
 to be used as parent theme by other ReadCraft themes.
+
+%description -l pl.UTF-8
+Nietypowy motyw Sphinksa, bez wyglądu, a jedynie funkcjonalny.
+Przeznaczony jako motyw do dziedziczenia przez inne motywy ReadCraft.
 
 %prep
 %setup -q -n sphinx_null_theme-%{version}
